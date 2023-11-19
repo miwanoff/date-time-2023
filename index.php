@@ -55,6 +55,15 @@ $nowdate = getdate();
 // echo 'Число: ', $nowdate['mday'], ', місяць: ', $months[$nowdate['mon']-1], ', день тижня: ', $days[$nowdate['wday']-1];
 
 date_default_timezone_set('Europe/Helsinki');
-$loc_ua = setlocale (LC_ALL, 'Ukrainian_Ukraine', 'Ukrainian_Ukraine', 'Ukrainian_Ukraine');
-echo "Ukrainian_Ukraine: $loc_ua"."\n" ;
-echo iconv("windows-1251","utf-8", @strftime("%A %d %B %Y %X"));
+$loc_ua = setlocale(LC_ALL, 'Ukrainian_Ukraine', 'Ukrainian_Ukraine', 'Ukrainian_Ukraine');
+echo "Ukrainian_Ukraine: $loc_ua" . "\n";
+echo iconv("windows-1251", "utf-8", @strftime("%A %d %B %Y %X"));
+
+echo "\n";
+
+$jd = GregorianToJD(10, 11, 1900);
+echo "$jd<br>\n";
+$gregorian = JDToGregorian($jd);
+echo "$gregorian<br>\n";
+
+echo JDDayOfWeek (GregorianToJD(11, 19, 1890), 1);
