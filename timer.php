@@ -1,5 +1,5 @@
 <?php
-
+header("Refresh:1");
 $now = time();
 $future = mktime(0, 0, 0, 1, 1, 2024);
 
