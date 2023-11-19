@@ -31,12 +31,30 @@
 // }
 // echo age(11, 29, 2019); //31
 
+// $loc = setlocale(LC_ALL, '')."\n";
 
-$loc = setlocale(LC_ALL, '')."\n";
+// echo "На этой системе локаль по умолчанию: $loc"."\n" ;
+// //$loc_de = setlocale(LC_ALL, 'de_DE', 'de', 'ge');
+// $loc_ua = setlocale (LC_ALL, 'Ukrainian_Ukraine', 'Ukrainian_Ukraine', 'Ukrainian_Ukraine');
+// echo "Ukrainian_Ukraine: $loc_ua"."\n" ;
+// echo iconv("windows-1251","utf-8", @strftime("%A %d %B %Y %X"));
+// //echo @strftime("%A %d %B %Y %X");
 
-echo "На этой системе локаль по умолчанию: $loc"."\n" ;
-//$loc_de = setlocale(LC_ALL, 'de_DE', 'de', 'ge');
+// echo strtotime("1/10/2018")."\n";
+// echo strtotime("10 September 2018");
+
+//echo @strftime("%A : %d,%B,%Y",strtotime("12/23/2018"));
+$d = getdate();
+print_r($d);
+
+echo @strftime("%A : %d,%B,%Y", getdate()[0]);
+
+$months = array('Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень');
+$days = array('Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятница', 'Субота', 'Неділя');
+$nowdate = getdate();
+// echo 'Число: ', $nowdate['mday'], ', місяць: ', $months[$nowdate['mon']-1], ', день тижня: ', $days[$nowdate['wday']-1];
+
+date_default_timezone_set('Europe/Helsinki');
 $loc_ua = setlocale (LC_ALL, 'Ukrainian_Ukraine', 'Ukrainian_Ukraine', 'Ukrainian_Ukraine');
 echo "Ukrainian_Ukraine: $loc_ua"."\n" ;
 echo iconv("windows-1251","utf-8", @strftime("%A %d %B %Y %X"));
-//echo @strftime("%A %d %B %Y %X");
